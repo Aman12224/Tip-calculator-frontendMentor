@@ -1,6 +1,9 @@
 import React from "react";
+import { useGlobalContext } from "./context";
 
 const Display = () => {
+  const { display, handleReset } = useGlobalContext();
+  const { tipAmount, total } = display;
   return (
     <div className="display">
       <div className="amount-container">
@@ -9,7 +12,7 @@ const Display = () => {
           <br />
           <span>/ person</span>
         </p>
-        <h1 className="total">$9.99</h1>
+        <h1 className="total">${tipAmount ? tipAmount : "0.00"}</h1>
       </div>
       <div className="amount-container">
         <p className="title">
@@ -17,9 +20,11 @@ const Display = () => {
           <br />
           <span>/ person</span>
         </p>
-        <h1 className="total">$9.99</h1>
+        <h1 className="total">${total ? total : "0.00"}</h1>
       </div>
-      <button className="submit-btn btn">RESET</button>
+      <button className="submit-btn btn" onClick={handleReset}>
+        RESET
+      </button>
     </div>
   );
 };

@@ -136,6 +136,9 @@ input:focus {
 .tip-btn {
   cursor: pointer;
 }
+.tip-btn.selected {
+  background-color: var(--Strong-cyan);
+}
 .tip-btn:hover {
   background-color: var(--Hover-clr);
   color: var(--Very-dark-cyan);
@@ -147,7 +150,7 @@ input:focus {
   text-align: right;
   padding-right: 2rem;
   font-size: var(--input-size);
-  max-width: 12rem;
+  max-width: 28rem;
   outline: transparent;
 }
 
@@ -185,8 +188,15 @@ input:focus {
   color: var(--Very-dark-cyan);
   cursor: pointer;
 }
-.submit-btn:hover {
-  background-color: var(--Hover-clr);
+
+.attribution {
+  background-color: white;
+  padding-bottom: 0.5rem;
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
 }
 
 @media screen and (min-width: 1040px) {
@@ -229,5 +239,15 @@ input:focus {
     transform: translateY(1.5rem);
     margin-top: 4rem;
     margin-bottom: 2rem;
+  }
+  .submit-btn:hover {
+    background-color: var(--Hover-clr);
+  }
+  .attribution {
+    background-color: var(--Light-grayish-cyan);
+    margin-top: 6rem;
+    padding-bottom: 0;
+    font-size: 11px;
+    text-align: center;
   }
 }
